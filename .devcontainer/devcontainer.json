@@ -1,0 +1,28 @@
+{
+    "name": "CPP Dev Environment",
+
+    "build": {
+        "dockerfile": "Dockerfile",
+    },
+
+    "runArgs": [ 
+        "--rm" 
+    ],
+
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/my_cpp_program,type=bind,consistency=cached",
+    "workspaceFolder": "/home/my_cpp_program",
+    
+    "mounts": [
+        "source=cpp_extensions,target=/root/.vscode-server/extensions,type=volume"
+    ],
+
+    "settings": {
+        "telemetry.enableTelemetry": false
+    },
+
+    "extensions": [
+        "ms-vscode.cpptools"
+    ],
+    
+    "shutdownAction": "stopContainer"
+}
